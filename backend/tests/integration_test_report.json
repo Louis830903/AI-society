@@ -1,0 +1,277 @@
+{
+  "timestamp": "2026-02-18T07:32:03.620774",
+  "base_url": "http://localhost:8000",
+  "results": {
+    "健康检查": {
+      "passed": 2,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "根路径",
+          "passed": true,
+          "message": "",
+          "duration_ms": 3750.34
+        },
+        {
+          "name": "健康检查",
+          "passed": true,
+          "message": "",
+          "duration_ms": 9.16
+        }
+      ]
+    },
+    "世界系统": {
+      "passed": 8,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "获取世界状态",
+          "passed": true,
+          "message": "",
+          "duration_ms": 9.52
+        },
+        {
+          "name": "获取世界时间",
+          "passed": true,
+          "message": "",
+          "duration_ms": 8.85
+        },
+        {
+          "name": "获取时钟状态",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.1
+        },
+        {
+          "name": "获取事件类型",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.52
+        },
+        {
+          "name": "获取事件历史",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.82
+        },
+        {
+          "name": "暂停世界",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.83
+        },
+        {
+          "name": "恢复世界",
+          "passed": true,
+          "message": "",
+          "duration_ms": 8.14
+        },
+        {
+          "name": "设置时间缩放",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.51
+        }
+      ]
+    },
+    "地点系统": {
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "获取地点列表",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.53
+        },
+        {
+          "name": "获取地点类型",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.49
+        },
+        {
+          "name": "获取活动类型",
+          "passed": true,
+          "message": "",
+          "duration_ms": 8.39
+        },
+        {
+          "name": "获取地点统计",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.34
+        },
+        {
+          "name": "按类型筛选",
+          "passed": true,
+          "message": "",
+          "duration_ms": 4.45
+        }
+      ]
+    },
+    "智能体系统": {
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "获取智能体列表",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.51
+        },
+        {
+          "name": "获取智能体数量",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.21
+        },
+        {
+          "name": "批量生成智能体",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.44
+        },
+        {
+          "name": "验证生成结果",
+          "passed": true,
+          "message": "",
+          "duration_ms": 0
+        },
+        {
+          "name": "获取智能体详情",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.09
+        }
+      ]
+    },
+    "对话系统": {
+      "passed": 2,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "获取对话列表",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.47
+        },
+        {
+          "name": "获取对话统计",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.37
+        }
+      ]
+    },
+    "LLM系统": {
+      "passed": 4,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "获取模型列表",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.14
+        },
+        {
+          "name": "获取LLM统计",
+          "passed": true,
+          "message": "",
+          "duration_ms": 4.53
+        },
+        {
+          "name": "获取成本信息",
+          "passed": true,
+          "message": "",
+          "duration_ms": 4.75
+        },
+        {
+          "name": "获取缓存统计",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.37
+        }
+      ]
+    },
+    "WebSocket": {
+      "passed": 2,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "建立连接",
+          "passed": true,
+          "message": "",
+          "duration_ms": 31.66
+        },
+        {
+          "name": "接收初始消息",
+          "passed": true,
+          "message": "event_type=system.connected",
+          "duration_ms": 0.31
+        }
+      ]
+    },
+    "错误处理": {
+      "passed": 3,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "不存在的端点",
+          "passed": true,
+          "message": "",
+          "duration_ms": 6.36
+        },
+        {
+          "name": "无效的时间缩放",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.77
+        },
+        {
+          "name": "不存在的智能体",
+          "passed": true,
+          "message": "",
+          "duration_ms": 5.82
+        }
+      ]
+    },
+    "性能测试": {
+      "passed": 5,
+      "failed": 0,
+      "tests": [
+        {
+          "name": "健康检查响应时间",
+          "passed": true,
+          "message": "平均 5.5ms",
+          "duration_ms": 5.52
+        },
+        {
+          "name": "世界状态响应时间",
+          "passed": true,
+          "message": "平均 5.1ms",
+          "duration_ms": 5.1
+        },
+        {
+          "name": "地点列表响应时间",
+          "passed": true,
+          "message": "平均 11.8ms",
+          "duration_ms": 11.8
+        },
+        {
+          "name": "智能体列表响应时间",
+          "passed": true,
+          "message": "平均 9.9ms",
+          "duration_ms": 9.93
+        },
+        {
+          "name": "10个并发请求",
+          "passed": true,
+          "message": "全部成功，耗时 22.1ms",
+          "duration_ms": 22.12
+        }
+      ]
+    }
+  },
+  "success": true
+}

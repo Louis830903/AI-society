@@ -1,0 +1,164 @@
+# ===================
+# AI Society .gitignore
+# ===================
+
+# ===================
+# 环境变量和敏感文件
+# ===================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/
+
+# ===================
+# Python
+# ===================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# ===================
+# Node.js / Frontend
+# ===================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Vite
+*.local
+.vite/
+
+# ===================
+# IDE / Editors
+# ===================
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+*.sublime-workspace
+*.sublime-project
+
+# VS Code - 保留 settings.json 以便团队共享配置
+# .vscode/
+
+# ===================
+# OS Files
+# ===================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ===================
+# Logs
+# ===================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ===================
+# Docker
+# ===================
+# 不忽略 docker-compose.yml，但忽略本地覆盖
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ===================
+# Database
+# ===================
+*.db
+*.sqlite
+*.sqlite3
+data/
+*.dump
+
+# ===================
+# Coverage / Testing
+# ===================
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+
+# ===================
+# Misc
+# ===================
+*.bak
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.turbo/
+
+# ===================
+# AI Society 特定
+# ===================
+# 向量数据库存储
+qdrant_storage/
+
+# 导出的数据
+exports/
+*.csv
+*.graphml
+
+# 本地开发脚本
+scripts/local/

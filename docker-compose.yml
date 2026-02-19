@@ -1,0 +1,130 @@
+# AI Society Docker Compose 配置
+# ================================
+# 启动方式: docker-compose up -d
+# 停止方式: docker-compose down
+# 查看日志: docker-compose logs -f
+
+version: '3.8'
+
+services:
+  # ==================
+  # PostgreSQL 数据库
+  # ==================
+  postgres:
+    image: postgres:15-alpine
+    container_name: aisociety-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aisociety2024}
+      POSTGRES_DB: aisociety
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==================
+  # Redis 缓存
+  # ==================
+  redis:
+    image: redis:7-alpine
+    container_name: aisociety-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ==================
+  # Qdrant 向量数据库
+  # ==================
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: aisociety-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      QDRANT__SERVICE__GRPC_PORT: 6334
+
+  # ==================
+  # 后端服务
+  # ==================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aisociety-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:${POSTGRES_PASSWORD:-aisociety2024}@postgres:5432/aisociety
+      - REDIS_URL=redis://redis:6379/0
+      - QDRANT_URL=http://qdrant:6333
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_BASE_URL=${DEEPSEEK_BASE_URL:-https://api.deepseek.com}
+      - DEFAULT_MODEL=${DEFAULT_MODEL:-deepseek-reasoner}
+      - TIME_SCALE=${TIME_SCALE:-10}
+      - MONTHLY_BUDGET=${MONTHLY_BUDGET:-200}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    volumes:
+      - ./backend:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  # ==================
+  # 前端服务（开发环境）
+  # ==================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aisociety-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0
+
+# ==================
+# 数据卷
+# ==================
+volumes:
+  postgres_data:
+    name: aisociety-postgres-data
+  redis_data:
+    name: aisociety-redis-data
+  qdrant_data:
+    name: aisociety-qdrant-data
+
+# ==================
+# 网络（可选，默认使用bridge）
+# ==================
+networks:
+  default:
+    name: aisociety-network

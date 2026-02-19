@@ -1,0 +1,70 @@
+BigScience OpenRAIL-M License
+
+Version 1.0 dated August 2022
+
+Section I: PREAMBLE
+
+This agreement ("Agreement") is between the Licensor (as defined below) and You.
+
+This license applies to AI models, software, and associated documentation files (collectively, the "Licensed Materials") developed for the AI Society project.
+
+Section II: LICENSE GRANT
+
+1. Subject to the terms and conditions of this license, the Licensor hereby grants You a worldwide, royalty-free, non-exclusive, perpetual license to:
+
+   a. Use the Licensed Materials;
+   b. Copy, modify, and create derivative works of the Licensed Materials;
+   c. Distribute copies of the Licensed Materials;
+   d. Sublicense the Licensed Materials.
+
+2. This license grant is subject to the following restrictions:
+
+   a. You must give appropriate credit, provide a link to this license, and indicate if changes were made.
+   b. You must not use the Licensed Materials for:
+      - Surveillance or tracking of individuals without their consent
+      - Generating misinformation or deceptive content
+      - Harassment, abuse, or harm to individuals or groups
+      - Any activity that violates applicable laws or regulations
+   c. You must not misrepresent the origin of the Licensed Materials.
+
+Section III: DISCLAIMER
+
+THE LICENSED MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE LICENSED MATERIALS OR THE USE OR OTHER DEALINGS IN THE LICENSED MATERIALS.
+
+Section IV: USE-BASED RESTRICTIONS
+
+You agree not to use the Licensed Materials for the purposes set forth below. These restrictions apply to any use of the Licensed Materials, including but not limited to fine-tuning, deployment, or integration with other systems.
+
+You agree not to use the Licensed Materials:
+
+1. In any way that violates any applicable national, federal, state, local or international law or regulation;
+
+2. For exploiting, harming, or attempting to exploit or harm minors in any way;
+
+3. To generate or disseminate false information or content with the purpose of causing harm;
+
+4. To generate or disseminate content that defames, disparages, or otherwise harasses individuals;
+
+5. For fully automated decision making that adversely impacts an individual's legal rights or creates or modifies a binding, enforceable obligation;
+
+6. For any use intended to or which has the effect of discriminating against or harming individuals or groups based on online or offline social behavior or known or predicted personal or personality characteristics;
+
+7. To exploit any of the vulnerabilities of specific groups such as children, the elderly, persons with disabilities, or other vulnerable populations;
+
+8. For any use intended to or which has the effect of creating or reinforcing unfair bias or discrimination.
+
+Section V: ATTRIBUTION
+
+When using or distributing the Licensed Materials, You must include the following attribution notice:
+
+"This project uses materials from AI Society, licensed under OpenRAIL-M."
+
+Section VI: TERMINATION
+
+This license and the rights granted hereunder will terminate automatically upon any breach by You of the terms of this license.
+
+---
+
+AI Society Project
+Copyright (c) 2024 AI Society Team
+https://github.com/AI-Society
